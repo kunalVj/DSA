@@ -8,7 +8,7 @@ class Solution{
 	public:
 	vector<int> downwardDigonal(int N, vector<vector<int>> A)
 	{
-		// Your code goes here
+		
 		vector<int>v;
 		
 		for(int i=0;i<N; i++){
@@ -18,7 +18,7 @@ class Solution{
 		        row++;
 		        col--;
 		    }
-		    
+		    col--;
 		}
 		
 		
@@ -29,6 +29,7 @@ class Solution{
 		        row++;
 		        col--;
 		    }
+		    row--;
 		}
 		return v;
 		
