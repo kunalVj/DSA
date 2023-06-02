@@ -1,5 +1,7 @@
 class Solution {
 public:
+// don't use dfs because dfs is not guranteed to find the shortest path, as it will explore the matrix as much as possible before moving to another branch
+
     int nearestExit(vector<vector<char>>& maze, vector<int>& entrance) {
         int row = maze.size();
         int col = maze[0].size();
@@ -28,9 +30,9 @@ public:
           if(nrow >= 0 && nrow < row && ncol >= 0 && ncol < col && maze[nrow][ncol] == '.'){
               //check if we reached the exit or boundary 
                     if(nrow == row - 1 || nrow == 0 || ncol == col - 1 || ncol == 0){
-                        if(nrow != Er || ncol != Ec){ // check if it's entrance cell or not because we can't exit from entrance
+                        
                             return count+1;  // if all conditions are satisfied we return distance by incrementing
-                        }
+                       
                     }
 
                     q.push({{nrow, ncol}, count+1}); // if that node is not exit then we push it int queue and increment the distance
@@ -41,3 +43,7 @@ public:
         return -1;  // if exit doesn't exist then return -1
     }
 };
+
+// TC = O(n.m), In the worst-case scenario, we may have to visit O(m⋅n)O(m \cdot n)O(m⋅n) cells before the iteration stops.
+
+// SC = O(n + m), We use a queue queue to store the cells to be visited. In the worst-case scenario, there may be O(m+n)O(m + n)O(m+n) cells stored in queue.
