@@ -11,7 +11,7 @@ void dfs(int currNode, int time,  vector<vector<int>> &adj, vector<int> &informT
     int numOfMinutes(int n, int headID, vector<int>& manager, vector<int>& informTime) {
             vector<vector<int>> adj(n);
 
-             for(int i = 0; i < n; i++){ // adjaceny list where ech index store the ids of subordinate employee
+             for(int i = 0; i < n; i++){ // adjaceny list where each index store the ids of subordinate employee
                  if(manager[i] != -1){   
                      adj[manager[i]].push_back(i);
                  }
