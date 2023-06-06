@@ -40,3 +40,4 @@ public:
        return 0; // return 0 if no sequence exist
     }
 };
+// tc = N X word.lenght * 26, where N = N is the total number of words in the input word list.
