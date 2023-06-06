@@ -1,5 +1,6 @@
 class Solution {
 public:
+// Approach is same as word ladder
     int minMutation(string startGene, string endGene, vector<string>& bank) {
         unordered_set<string> st (bank.begin(), bank.end());
         queue<pair<string, int>> q;
