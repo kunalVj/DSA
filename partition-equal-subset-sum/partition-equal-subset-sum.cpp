@@ -15,7 +15,7 @@ public:
 // if sum is even then there are changes of doing partitioning so the easiest way will be to make the sum half and then find the sum in the given array.
 
 // Then by doing this the problem will be reduced to a simple 01 Knapsack of finding a subset sum in an array.
-        
+        else{
             int target = sum/2;
             bool dp[n+1][target+1];
 
@@ -39,6 +39,6 @@ public:
             }
 
             return dp[n][target];
-        
+        }
     }
 };
