@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool isHappy(int n) {
-        unordered_map<int,int> s;
-
+        unordered_set<int> s;
+        
         while(n != 1){
             int sum = 0;
              int current = n;
@@ -13,12 +13,14 @@ public:
                  current = current/10;
              }
 
-             if(s.find(sum) != s.end()){
+             if(s.count(sum)){
                  return false;
              }
 
-             s[sum]++;
-            n = sum;
+             s.insert(sum);
+
+             n = sum;
+             
         }
 
         return true;
