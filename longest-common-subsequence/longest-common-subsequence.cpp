@@ -1,28 +1,28 @@
 class Solution {
 public:
-int longestCommonSubsequence(string &text1, string &text2,int m,int n,int memo[1001][1001]) {
-        if(m==0 || n==0){
+int lcs(string &text1, string &text2, int n, int m, int dp[1001][1001]) {
+        if(n==0 || m==0){
             return 0;
         }
-        if(memo[m][n]!=-1){
-            return memo[m][n];
+        if(dp[n][m]!=-1){
+            return dp[n][m];
         }
-        if(text1[m-1]==text2[n-1]){
-            return memo[m][n]= 1+longestCommonSubsequence(text1,text2,m-1,n-1,memo);
+        if(text1[n-1]==text2[m-1]){
+            return dp[n][m]= 1+lcs(text1,text2,n-1,m-1,dp);
         }else{
-            return memo[m][n]= max(longestCommonSubsequence(text1,text2,m-1,n,memo),longestCommonSubsequence(text1,text2,m,n-1,memo));
+            return dp[n][m]= max(lcs(text1, text2, n, m-1, dp), lcs(text1, text2, n-1, m, dp));
         }
     }
     int longestCommonSubsequence(string text1, string text2) {
 
-        int m=text1.size(),n=text2.size();
-        int memo[1001][1001];
+        int n=text1.size(), m=text2.size();
+        int dp[1001][1001];
         for(int i=0;i<1001;i++){
             for(int j=0;j<1001;j++){
-                memo[i][j]=-1;
+                dp[i][j] = -1;
             }
         }
-        return longestCommonSubsequence(text1,text2,m,n,memo);
+        return lcs(text1, text2, n, m, dp);
 
 
        /* int n = text1.size();
