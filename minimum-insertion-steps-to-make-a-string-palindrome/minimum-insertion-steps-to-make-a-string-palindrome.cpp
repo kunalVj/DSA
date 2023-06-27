@@ -1,5 +1,8 @@
 class Solution {
 public:
+
+// the difference b/w given string and longest palindromic string is the answer, that difference is the min no. of insertion steps needed to make a whole string palindrome 
+
     int minInsertions(string s) {
         
         string s1 = s;
