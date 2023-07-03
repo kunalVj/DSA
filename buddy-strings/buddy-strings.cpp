@@ -6,6 +6,8 @@ public:
        }
 
        if(s == goal){
+           // If we have 2 same characters in string 's',
+        // we can swap them and still strings will remain equal.
            vector<int> freq(26, 0);
 
            for(auto it : s){
@@ -14,6 +16,7 @@ public:
                    return true;
                }
            }
+            // Otherwise, if we swap any two chanacters it will make strings unequal.
            return false;
        }
 
@@ -29,15 +32,19 @@ public:
                    secondChar = i;
                }
                else{
+                   // We have atleast 3 indices with differnet characters,
+                    // thus, we can never make strings equal with only one swap.
                    return false;
                }
            }
        }
 
        if(secondChar == -1){
+           // We can't swap if character at only one index is different.
            return false;
        }
 
+ // All characters of both the string are same except two indices.
        return s[firstChar] == goal[secondChar] && s[secondChar] == goal[firstChar];
 
     }
