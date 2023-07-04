@@ -6,8 +6,8 @@ public:
             mp[nums[i]]++;
         }
 
-        int ans = 0;
-        
+        int ans;
+
         for(auto i : mp){
             if(i.second == 1){
                ans = i.first;
