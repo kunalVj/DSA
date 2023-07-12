@@ -1,6 +1,5 @@
-// if we find a cycle we dont, include it's nodes in safe node, anyone who is part of cycle is not safe node
+// if we find a cycle we dont include it's nodes in safe node, anyone who is part of cycle is not safe node
 // any node who leads to cycle can not be safe node
-
 
 class Solution {
 public:
