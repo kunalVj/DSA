@@ -17,7 +17,7 @@ public:
             indegree[u]++;
         }
 
-        for(int i = 0; i < n; i++){  // push the vetices with 0 indegree as they will be our starting point
+        for(int i = 0; i < n; i++){  // push the vertices with 0 indegree as they will be our starting point
             if(indegree[i] == 0){
                 q.push(i);
             }
