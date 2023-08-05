@@ -4,8 +4,10 @@ int solve(int n, vector<int> &dp){
     if(n <= 1){
         return 1;
     }
-
-    if(!dp[n]){
+    if(dp[n] != 0){
+        return dp[n];
+    }
+    else{
         for(int i = 1; i <= n; i++){
             dp[n] += solve(i-1, dp) * solve(n-i, dp);
         }
