@@ -1,3 +1,18 @@
+/*
+Suppose I want to know how many distinct BST there are with n nodes from 0 to n-1.
+
+If my BST has n-1 at the head, how many nodes will be on the left side? How many nodes will be on
+the right side?
+
+If my BST has n-2 at the head, how many nodes will be on the left side? How many nodes will be on
+the right side?
+
+
+n nodes of BST into 1, i - 1, and n - i nodes, where, 1 node is given to root, i - 1 nodes are given to left BST subtree and n - i nodes are given to right BST subtree respectively s.t overall we still have 1 + i - 1 + n - i = n nodes. 
+
+*/
+
+
 class Solution {
 public:
 // bottom up
