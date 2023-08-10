@@ -4,21 +4,8 @@ public:
        // in this num[start] == nums[mid] && nums[end] == nums[mid] can be possible for this we have to add an extra if condition in which nums[start] == nums[mid] == nums[end] can be checked before the original logic, if so then move start and end both towards the middle by 1 and repeat.
     
     bool search(vector<int>& nums, int target) {
-
-        for(int i = 0; i < nums.size(); i++){
-            if(nums[i] == target){
-                return true;
-            }
-        }
-        return false;
-
-
-
-
-
-
-
-    /*    int start = 0;
+     
+        int start = 0;
         int end = nums.size() - 1;
         int mid;
 
@@ -51,7 +38,19 @@ public:
         }
 
         
-        return false;*/
+        return false;
         
     }
 };
+
+/*
+ (or we can sort it : sort(nums.begin(), nums.end());)
+ 
+for(int i = 0; i < nums.size(); i++){
+            if(nums[i] == target){
+                return true;
+            }
+        }
+        return false;
+
+*/
